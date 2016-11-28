@@ -13,7 +13,8 @@ const mapActionCreators = {
 
 const mapStateToProps = (state) => ({
   sideBarOpen: state.sidebar.sidebarOpen,
-  products: state.productlist.products
+  products: state.productlist.products,
+  filter: state.productlist.filter
 })
 
 export default connect(mapStateToProps, mapActionCreators)(ProductListView)

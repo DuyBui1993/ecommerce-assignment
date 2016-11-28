@@ -16,7 +16,10 @@ class ProductListView extends React.Component {
           <div className="container">
             <h1 className="text-center head red">Product List</h1>
             <div className="row">
-              {this.props.products.length > 0 ? this.props.products.map(product =>
+              {this.props.products.length > 0 ? this.props.products.filter((product) => {
+                  if(this.props.filter === 'all') return true
+                  return product.category === this.props.filter
+              }).map(product =>
                 <div key={product.id}
                  className="col-md-3 col-sm-6 col-xs-12">
                   <h3 className="text-center">{product.title}</h3>
